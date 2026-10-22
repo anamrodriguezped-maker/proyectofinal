@@ -1,0 +1,176 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;/* ESTO DETERMINA EL TIPO DE LETRA */
+}
+
+/* FONDO */
+body{
+    background: linear-gradient(135deg, #ffe6f0, #fff);
+}
+
+/* HEADER */
+header{
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.CONTENEDOR{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+.LOGOS img{
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.LOGOS img:hover{
+    transform: scale(1.1);
+}
+
+/* MENÚ */
+.MENU a{
+    text-decoration: none;
+    margin: 0 15px;
+    color: #ff4da6;
+    font-weight: bold;
+    position: relative;
+}
+
+.MENU a::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #ff4da6;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.MENU a:hover::after{
+    width: 100%;
+}
+
+/* ICONOS */
+.ICONOS img{
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ICONOS img:hover{
+    transform: scale(1.2);
+}
+
+/* CONTENEDOR PRODUCTOS */
+.productos{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+/* TARJETAS */
+.card{
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* IMÁGENES */
+.card-img-top{
+    height: 250px;
+    object-fit: cover;
+}
+
+/* TEXTO */
+.card-title{
+    color: #ff3399;
+    font-weight: bold;
+}
+
+.card-text{
+    color: #555;
+}
+
+/* BOTÓN */
+.btn-primary{
+    background: linear-gradient(45deg, #ff4da6, #ff80bf);
+    border: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover{
+    background: linear-gradient(45deg, #ff1a8c, #ff66b2);
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer{
+    background: #ff4da6;
+    color: white;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.CONTENEDORFOOTER{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer h2{
+    display: flex;
+    color: white;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+footer a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+
+
+footer a:hover{
+    text-decoration: underline;
+    color: #ffe6f0;
+}
+
+/* COPYRIGHT */
+p{
+    text-align: center;
+    margin: 10px;
+}
+.redes{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.redes img {
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.redes img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.3);
+}

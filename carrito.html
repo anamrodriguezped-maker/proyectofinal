@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>🛒 Carrito de Compras</title>
+    <link rel="icon" href="img/logo.png"> 
+    <link rel="stylesheet" href="stylecarrito.css">
+    <style>
+.info{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    flex:1;
+}
+
+.acciones{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-left:auto;
+}
+
+.subtotal{
+    font-size:22px;
+    font-weight:bold;
+    color:#4f7cff;
+    min-width:120px;
+    text-align:right;
+}
+    </style>
+
+</head>
+<body onload="mostrarCarrito()">
+    <div class="contenedor">
+        <h1 class="titulo">🛒 Mi Carrito</h1>
+        <div class="carrito">
+            <div id="listaCarrito"></div>
+            <div class="resumen">
+                <h2>Resumen de Compra</h2>
+                <div class="linea">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0</span>
+                </div>
+                <div class="linea">
+                    <span>IVA (16%)</span>
+                    <span id="iva">$0</span>
+                </div>
+                <div class="linea totalFinal">
+                    <span>Total</span>
+                    <span id="total">$0</span>
+                </div>
+                <button class="btnVaciar" style="background:#bd5353;" onclick="window.location.href='pagos.php'">
+                    Pagar
+                </button>
+                <button class="btnVaciar" onclick="vaciarCarrito()">
+                    Vaciar carrito
+                </button>
+                <button class="btnVaciar" style="background:#428652;" onclick="window.location.href='productos.php'">
+                    Seguir comprando
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="carrito.js"></script>
+</body>
+</html>

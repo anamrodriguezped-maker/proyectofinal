@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="styleproductos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 😽Productos</title>
+    <link rel="icon" href="img/LOGOGYG.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<style>/* CHAT BOT */
+/* Botón flotante */
+#chat-button {
+  z-index: 9999;
+}
+
+/* Ventana del chat */
+#chat-box {
+  z-index: 9999;
+}
+/* Botón flotante */
+#chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff4da6;
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Ventana de chat */
+#chat-box {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 280px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+#close-chat {
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 30%;
+}
+
+#chat-header {
+  font-size: 18px;
+  background: #ff4da6;
+  color: white;
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Mensajes */
+#chat-messages {
+  padding: 10px;
+  height: 280px;
+  overflow-y: auto;
+  font-size: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#chat-messages p {
+  width: 100%;
+  text-align: left;
+  margin: 5px 0;
+}
+/* Input */
+#chat-input {
+    display: flex;
+  border-top: 1px solid #ddd;
+}
+#chat-input input {
+  font-size: 13px;
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+#chat-input button {
+  font-size: 15px;
+  border: none;
+  background: #ff4da6;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+    <?php
+    session_start();
+    ?>
+    <h5 style="color: palevioletred; justify-content: right; display: flex; margin-right: 50px;">
+        <?php
+        echo "Bienvenido " . $_SESSION['nombre'] . " " . $_SESSION['apellido'];
+        ?>
+    </h5>
+    <HEADER>
+        <div class="CONTENEDOR">
+            <DIV class="LOGOS">
+                <img src="img/LOGOGYG.png" width="100px" height="100px">
+                <img src="img/TITLE2.png" width="400px" height="100px">
+            </DIV>
+            <DIV class="MENU">
+                <A href="index.php">INICIO</A>
+                <A href="productos.php">PRODUCTOS</A>
+                <A href="cerrarsesion.php"> CERRAR SESIÓN </A>
+            </DIV>
+            <DIV class="ICONOS">
+
+                <div style="position: relative; display: inline-block;">
+                    <A href="carrito.html"><img src="img/carrito.png" width="50px" height="50px" style="border-radius: 50%; object-fit: cover;"></A>
+                    <span id="contadorCarrito" style="position: absolute; top: -5px; right: -10px; background: red; color: white; border-radius: 50%; padding: 3px 7px;
+    font-size: 12px;"> 0 </a>
+                    </span>
+                </div>
+                <img src="img/CORAZON.png" width="50px" height="50px" style="border-radius: 50%; object-fit: cover;">
+                <img src="img/LUPA.png" width="50px" height="50px" style="border-radius: 50%; object-fit: cover;">
+            </DIV>
+        </div>
+    </HEADER>
+
+
+
+
+
+    <div class=productos>
+        <div class="card" style="width: 18rem;">
+            <img src="img/gata1.jpg" class="card-img-top" alt="Collar para gata" width="330px" height="300px">
+            <div class="card-body">
+                <h5 class="card-title" style="color: palevioletred">COLLARES PARA GATAS</h5>
+                <p class="card-text">Hermoso collar con broche antiahogo en forma de gato y dije elegante. <br> <strong> Precio: $25.000</strong> </p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Collar Gata', 25000, 1)">
+                    Añadir a carrito
+                </button>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="img/gato1.jpg" class="card-img-top" alt="Collar para gato" width="330px" height="300px">
+            <div class="card-body">
+                <h5 class="card-title" style="color: rgb(112, 174, 216)">COLLARES PARA GATOS</h5>
+                <p class="card-text">Hermoso collar con broche antiahogo en forma de gato y dije elegante. <br> <strong> Precio: $25.000</strong> </p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Collar Gato', 25000)">
+                    Añadir a carrito
+                </button>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="img/promo.jpg" class="card-img-top" alt="Collar para gata" width="330px" height="300px">
+            <div class="card-body">
+                <h5 class="card-title" style="color: rgb(136, 216, 112)">PROMOCIÓN DEL MES</h5>
+                <p class="card-text">Disfruta de está espectacular oferta por este mes. <br> <strong> Precio: $20.000</strong></p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Promoción del mes', 20000)">
+                    Añadir a carrito
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class=productos>
+        <div class="card" style="width: 18rem;">
+            <img src="img/COMPLETO/gatas/1.png" class="card-img-top" alt="Collar para gata" width="330px" height="300px">
+            <div class="card-body">
+                <h5 class="card-title" style="color: palevioletred">COLLARES PARA GATAS</h5>
+                <p class="card-text">Hermoso collar con broche antiahogo en forma de gato y dije elegante. <br> <strong> Precio: $25.000</strong> </p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Collar Gata', 25000)">
+                    Añadir a carrito
+                </button>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="img/COMPLETO/gatas/3.png" class="card-img-top" alt="Collar para gata" width="330px" height="300px">
+            <div class="card-body">
+                <h5 class="card-title" style="color: palevioletred">COLLARES PARA GATAS</h5>
+                <p class="card-text">Hermoso collar con broche antiahogo en forma de gato y dije elegante. <br> <strong> Precio: $25.000</strong> </p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Collar Gata', 25000)">
+                    Añadir a carrito
+                </button>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="img/COMPLETO/gatas/6.png" class="card-img-top" alt="Collar para gata" width="330px" height="300px">
+            <div class="card-body">
+                <h5 class="card-title" style="color: palevioletred">COLLARES PARA GATAS</h5>
+                <p class="card-text">Hermoso collar con broche antiahogo en forma de gato y dije elegante. <br> <strong> Precio: $25.000</strong> </p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Collar Gata', 25000)">
+                    Añadir a carrito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class=productos>
+        <div class="card" style="width: 18rem;">
+            <img src="img/COMPLETO/gatos/2.png" class="card-img-top" alt="Collar para gato" width="330px" height="300px">
+            <div class="card-body">
+                <h5 class="card-title" style="color: rgb(112, 174, 216)">COLLARES PARA GATOS</h5>
+                <p class="card-text">Hermoso collar con broche antiahogo en forma de gato y dije elegante. <br> <strong> Precio: $25.000</strong> </p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Collar Gato', 25000)">
+                    Añadir a carrito
+                </button>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="img/COMPLETO/gatos/4.png" class="card-img-top" alt="Collar para gato" width="330px" height="300px">
+            <div class="card-body">
+                <h5 class="card-title" style="color: rgb(112, 174, 216)">COLLARES PARA GATOS</h5>
+                <p class="card-text">Hermoso collar con broche antiahogo en forma de gato y dije elegante. <br> <strong> Precio: $25.000</strong> </p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Collar Gato', 25000)">
+                    Añadir a carrito
+                </button>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="img/COMPLETO/gatos/12.png" class="card-img-top" alt="Collar para gato" width="330px" height="300px">
+            <div class="card-body">
+                <h5 class="card-title" style="color: rgb(112, 174, 216)">COLLARES PARA GATOS</h5>
+                <p class="card-text">Hermoso collar con broche antiahogo en forma de gato y dije elegante. <br> <strong> Precio: $25.000</strong> </p>
+                <button class="btn btn-primary" onclick="agregarAlCarrito('Collar Gato', 25000)">
+                    Añadir a carrito
+                </button>
+            </div>
+        </div>
+
+    </div>
+ <!-- Botón flotante -->
+<div id="chat-button"> <img src="IMG/asistente.png" alt="asistente" width="80%" height="80%"></div>
+<!-- Ventana de chat -->
+<div id="chat-box">
+  <div id="chat-header" >
+    <span><strong>Chat</strong></span>
+    <button id="close-chat">✖️</button>
+  </div>
+  <div id="chat-messages">
+    <p><strong>Bot:</strong> Hola 💕 ¿En qué puedo ayudarte?</p>
+  </div>
+  <div id="chat-input">
+    <input type="text" id="message" placeholder="Escribe tu mensaje..." />
+    <button id="send"><strong>Enviar</strong></button>
+  </div>
+</div>
+ 
+
+
+    <footer>
+        <DIV CLASS="CONTENEDORFOOTER">
+
+            <DIV CLASS="ENLACES">
+                <h2>Enlaces de interes</h2>
+                <a href="productos.html">Catalogo de productos</a>
+                <a href="tratamientodatos.html">Tratamiento de datos</a>
+            </DIV>
+            <DIV CLASS="NOSOTROS" style="text-align: center;">
+                <h2>Acerca de nosotros</h2>
+                <a href="nosotros.html"> Acerca de nosotros</a>
+                <div class="redes">
+                    <a href="https://www.instagram.com/anaysusgatosygatas?igsh=enpqcDA4MnVsbnJr"><img src="img/INSTAGRAM.png" width="35px" height="35px"></a>
+                    <a href="https://www.tiktok.com/@anaysusgatos?_r=1&_t=ZS-95bViF0doaj"><img src="img/TIKTOK.png" width="35px" height="35px"></a>
+                </DIV>
+            </DIV>
+            <DIV CLASS="CONTACTANOS1">
+                <h2>Contactanos</h2>
+                📩anaysusgatosygatas.2025@gmail.com
+                <p>📞 3186421072</p>
+                <a href="https://www.daviplata.com/"> <img src="img/pagosdavi.png" width="20px" height="20px"> Pagos con Daviplata </a>
+            </DIV>
+        </DIV>
+
+    </footer>
+    <div class="derechos" style="text-align: center;">
+        <label style="color: black;"> <strong>Copyright © Ana y sus Gatos & Gatas</strong></labe>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        function agregarAlCarrito(nombre, precio) {
+            carrito.push({
+                nombre,
+                precio
+            });
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            actualizarContador();
+            alert(nombre + " añadido al carrito 🛒");
+        }   
+
+        function actualizarContador() {
+            let contador = carrito.length;
+            document.getElementById("contadorCarrito").innerText = contador;
+        }
+
+        // Cargar contador al iniciar
+        actualizarContador();
+    </script>
+
+<script src="javascript1.js" defer></script>
+
+</body>
+</html>

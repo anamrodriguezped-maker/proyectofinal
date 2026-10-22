@@ -1,0 +1,351 @@
+/* RESET GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* FONDO GENERAL */
+body{
+    background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+    color: #333;
+}
+
+/* HEADER */
+header{
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.CONTENEDOR{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+/* LOGOS */
+.LOGOS img{
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.LOGOS img:hover{
+    transform: scale(1.1) rotate(3deg);
+}
+
+/* MENÚ */
+.MENU a{
+    text-decoration: none;
+    margin: 0 15px;
+    color: #ff4da6;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s;
+}
+
+.MENU a::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #ff4da6;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.MENU a:hover::after{
+    width: 100%;
+}
+
+.MENU a:hover{
+    color: #ff1a8c;
+}
+
+/* ICONOS */
+.ICONOS img{
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.ICONOS img:hover{
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px #ff66b2);
+}
+
+/* CARRUSEL */
+.carousel-inner img{
+    border-radius: 10px;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* TITULO */
+h2{
+    text-align: center;
+    margin: 30px 0;
+    color: #ff3399;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+/* TABLA PRODUCTOS */
+table{
+    margin: auto;
+    border-spacing: 20px;
+}
+
+table img{
+    border-radius: 15px;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+table img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* PARRAFOS */
+p{
+    width: 80%;
+    margin: 15px auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* LISTA */
+ul{
+    width: 60%;
+    margin: 20px auto;
+    list-style: none;
+}
+
+ul li{
+    background: #fff;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+ul li:hover{
+    background: #ffe6f0;
+    transform: translateX(10px);
+}
+
+/* IMAGEN GRANDE */
+img[src="img/gata1.jpg"]{
+    display: block;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+footer{
+    background: #ff4da6;
+    color: white;
+    margin-top: 40px;
+    padding: 30px;
+    text-align: center;
+}
+
+.CONTENEDORFOOTER{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+footer h2{
+    color: white;
+    margin-bottom: 10px;
+}
+
+footer a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: #ffe6f0;
+}
+
+/* EFECTO BONITO GENERAL */
+a{
+    transition: all 0.3s ease;
+}
+
+.btn-primary{
+    background: linear-gradient(45deg, #ff4da6, #ff80bf);
+    border: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    margin: 20px 0;
+}
+    
+.registrousuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* FORMULARIO */
+.registrousuario form{
+    background: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: left;
+    animation: aparecer 0.6s ease;
+}
+
+/* ANIMACIÓN SUAVE */
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TÍTULO */
+.registrousuario h4{
+    text-align: center;
+    color: #ff4da6;
+    margin-bottom: 15px;
+}
+
+/* INPUTS */
+.registrousuario input[type="text"],
+.registrousuario input[type="email"],
+.registrousuario input[type="password"],
+.registrousuario input[type="date"]{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* EFECTO FOCUS */
+.registrousuario input:focus{
+    border-color: #ff4da6;
+    box-shadow: 0 0 5px #ff99cc;
+}
+
+/* CHECKBOX */
+.registrousuario input[type="checkbox"]{
+    margin-right: 8px;
+}
+
+/* BOTÓN */
+.registrousuario input[type="submit"]{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff4da6, #ff80bf);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* HOVER BOTÓN */
+.registrousuario input[type="submit"]:hover{
+    background: linear-gradient(45deg, #ff1a8c, #ff66b2);
+    transform: scale(1.05);
+}
+
+
+.popup{
+        display: flex;
+background:white;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+animation: aparecer 0.5s ease;
+}
+
+.popup img{
+width:100px;
+margin-bottom:15px;
+}
+
+.popup h2{
+color: #ff4da6;
+}
+
+.popup a{
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+background:#ff4da6;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.popup a:hover{
+@keyframes aparecer{
+    from{
+    opacity:0;
+    transform:scale(0.8);
+    }
+    to{
+    opacity:1;
+    transform:scale(1);
+    }
+}
+}
+.popup-content{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.popup-text{
+    text-align: left;
+}
+.redes{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.redes img {
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.redes img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.3);
+}
+
+
